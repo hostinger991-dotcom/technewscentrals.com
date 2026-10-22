@@ -1,0 +1,6 @@
+{
+  "name": "technewscentrals",
+  "description": "Engineering & Consumer Tech Journal - Published Daily. In-depth analysis of consumer electronics, AI, cybersecurity, and enterprise hardware.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

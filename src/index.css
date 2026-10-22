@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-deep: #081c18;
+    --bg-surface: #0b2721;
+    --cyan-accent: #5fdee7;
+    --yellow-glow: #ffd700;
+    --yellow-accent: #ffcc00;
+  }
+
+  body {
+    background-color: #081c18;
+    color: #e2e8f0;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom interactive glowing yellow hover utility */
+.tech-hover-card {
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(95, 222, 231, 0.2);
+  background-color: rgba(11, 39, 33, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.tech-hover-card:hover {
+  border-color: #ffd700 !important;
+  background-color: rgba(26, 44, 28, 0.85) !important;
+  box-shadow: 0 0 24px -2px rgba(255, 215, 0, 0.32), 0 0 10px rgba(255, 204, 0, 0.2) inset !important;
+  transform: translateY(-3px);
+}
+
+.tech-hover-item {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(95, 222, 231, 0.25);
+}
+
+.tech-hover-item:hover {
+  border-color: #ffd700 !important;
+  color: #ffd700 !important;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.35) !important;
+}
+
+.tech-hover-btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tech-hover-btn:hover {
+  border-color: #ffd700 !important;
+  color: #081c18 !important;
+  background-color: #ffd700 !important;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.45) !important;
+}
+
+/* Continuous Ticker Tape Marquee */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #081c18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(95, 222, 231, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd700;
+}
