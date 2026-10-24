@@ -12,11 +12,11 @@ export const TickerTape: React.FC<TickerTapeProps> = ({ onSelectArticle }) => {
   const duplicated = [...headlines, ...headlines];
 
   return (
-    <div className="relative w-full overflow-hidden bg-[#061713] border-y border-[#5fdee7]/20 py-2.5 z-20">
+    <div className="relative w-full overflow-hidden bg-[#181403] border-y border-[#ffd700]/25 py-2.5 z-20">
       <div className="max-w-7xl mx-auto flex items-center">
-        {/* Fixed Lead Badge */}
-        <div className="shrink-0 flex items-center gap-1.5 px-3 py-1 mr-3 ml-2 rounded border border-[#5fdee7] bg-[#0b2721] text-[#5fdee7] text-xs font-mono font-bold tracking-wider uppercase z-10 shadow-sm">
-          <Flame className="w-3.5 h-3.5 text-[#ffd700] animate-pulse" />
+        {/* Fixed Lead Badge in Glowing Yellow with Green Flame Accent */}
+        <div className="shrink-0 flex items-center gap-1.5 px-3 py-1 mr-3 ml-2 rounded border border-[#ffd700] bg-[#241e06] text-[#ffd700] text-xs font-mono font-bold tracking-wider uppercase z-10 shadow-sm">
+          <Flame className="w-3.5 h-3.5 text-[#00ff88] animate-pulse" />
           <span>BREAKING WIRE</span>
         </div>
 
@@ -27,15 +27,15 @@ export const TickerTape: React.FC<TickerTapeProps> = ({ onSelectArticle }) => {
               <button
                 key={`${item.id}-${index}`}
                 onClick={() => onSelectArticle(item.id)}
-                className="group inline-flex items-center gap-3 text-xs text-slate-300 hover:text-[#ffd700] transition-colors whitespace-nowrap text-left"
+                className="group inline-flex items-center gap-3 text-xs text-slate-300 hover:text-[#00ff88] transition-colors whitespace-nowrap text-left"
               >
-                <span className="font-mono text-[10px] uppercase px-1.5 py-0.5 rounded border border-[#5fdee7]/40 text-[#5fdee7] group-hover:border-[#ffd700] group-hover:text-[#ffd700] transition-colors bg-[#081c18]">
+                <span className="font-mono text-[10px] uppercase px-1.5 py-0.5 rounded border border-[#ffd700]/40 text-[#ffd700] group-hover:border-[#00ff88] group-hover:text-[#00ff88] transition-colors bg-[#141204]">
                   {item.tag}
                 </span>
-                <span className="font-medium tracking-tight group-hover:underline underline-offset-4 decoration-[#ffd700]">
+                <span className="font-medium tracking-tight group-hover:underline underline-offset-4 decoration-[#00ff88]">
                   {item.title}
                 </span>
-                <span className="text-slate-600 font-mono">/</span>
+                <span className="text-yellow-600/40 font-mono">/</span>
               </button>
             ))}
           </div>

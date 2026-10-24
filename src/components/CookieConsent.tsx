@@ -31,10 +31,10 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
 
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-4 duration-300">
-      <div className="p-4 sm:p-5 rounded-2xl bg-[#0b2721] border border-[#5fdee7]/40 shadow-2xl backdrop-blur-xl text-slate-200 space-y-3">
+      <div className="p-4 sm:p-5 rounded-2xl bg-[#201b05] border border-[#ffd700]/40 shadow-2xl backdrop-blur-xl text-slate-200 space-y-3">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-[#ffd700] shrink-0" />
+            <ShieldCheck className="w-5 h-5 text-[#00ff88] shrink-0" />
             <h4 className="text-xs font-mono font-bold uppercase text-white tracking-wider">
               PRIVACY &amp; COOKIE CONSENT
             </h4>
@@ -52,7 +52,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
           We use strictly essential technical telemetry and local storage to preserve your reading preferences, bookmarks, and font scale. We do not track you across external domains. Read our{' '}
           <button
             onClick={onOpenPrivacy}
-            className="text-[#5fdee7] underline hover:text-[#ffd700]"
+            className="text-[#ffd700] underline hover:text-[#00ff88]"
           >
             Privacy Policy
           </button>
@@ -62,13 +62,13 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
         <div className="flex items-center gap-2 pt-1">
           <button
             onClick={handleAccept}
-            className="flex-1 py-1.5 px-3 bg-[#ffd700] hover:bg-[#ffcc00] text-[#081c18] font-mono text-xs font-bold uppercase rounded-lg transition-colors"
+            className="flex-1 py-1.5 px-3 bg-[#ffd700] hover:bg-[#00ff88] text-[#141204] font-mono text-xs font-bold uppercase rounded-lg transition-colors"
           >
             Accept All
           </button>
           <button
             onClick={handleDecline}
-            className="py-1.5 px-3 border border-white/20 hover:border-white/40 text-slate-300 hover:text-white font-mono text-xs rounded-lg transition-colors"
+            className="py-1.5 px-3 border border-yellow-500/20 hover:border-yellow-500/40 text-slate-300 hover:text-white font-mono text-xs rounded-lg transition-colors"
           >
             Essential Only
           </button>

@@ -47,10 +47,10 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
 
   return (
     <>
-      <div className={`relative group overflow-hidden rounded-xl border border-[#5fdee7]/25 bg-[#0a1624] transition-all duration-300 ${className}`}>
+      <div className={`relative group overflow-hidden rounded-xl border border-[#ffd700]/30 bg-[#141204] transition-all duration-300 ${className}`}>
         {/* Toggle between AI Real Visual & Interactive Schematic */}
         {aiImageUrl && !imageFailed && (
-          <div className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1 bg-[#081c18]/90 border border-white/15 rounded-lg p-0.5 backdrop-blur-md opacity-90 group-hover:opacity-100 transition-opacity">
+          <div className="absolute top-2.5 right-2.5 z-20 flex items-center gap-1 bg-[#141204]/90 border border-[#ffd700]/25 rounded-lg p-0.5 backdrop-blur-md opacity-90 group-hover:opacity-100 transition-opacity">
             <button
               type="button"
               onClick={(e) => {
@@ -59,7 +59,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
               }}
               className={`p-1.5 rounded text-[10px] font-mono flex items-center gap-1 ${
                 viewMode === 'image'
-                  ? 'bg-[#ffd700] text-[#081c18] font-bold'
+                  ? 'bg-[#ffd700] text-[#141204] font-bold'
                   : 'text-slate-300 hover:text-white'
               }`}
               title="Real AI Infographic View"
@@ -75,7 +75,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
               }}
               className={`p-1.5 rounded text-[10px] font-mono flex items-center gap-1 ${
                 viewMode === 'schematic'
-                  ? 'bg-[#ffd700] text-[#081c18] font-bold'
+                  ? 'bg-[#ffd700] text-[#141204] font-bold'
                   : 'text-slate-300 hover:text-white'
               }`}
               title="6-Panel Schematic Matrix"
@@ -98,9 +98,9 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
               loading="lazy"
             />
             {/* High-tech overlay with zoom and title */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#081c18]/90 via-[#081c18]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141204]/95 via-[#141204]/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-4 pointer-events-none">
               <div>
-                <p className="text-[10px] font-mono uppercase tracking-wider text-[#ffd700]">
+                <p className="text-[10px] font-mono uppercase tracking-wider text-[#00ff88]">
                   REAL AI INFOGRAPHIC SPECIFICATION
                 </p>
                 <p className="text-xs font-bold text-white truncate max-w-sm">{data.title}</p>
@@ -111,7 +111,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
                   e.stopPropagation();
                   setModalOpen(true);
                 }}
-                className="pointer-events-auto p-2 rounded-lg bg-[#0b2721]/95 border border-[#ffd700] text-[#ffd700] hover:bg-[#ffd700] hover:text-[#081c18] transition-colors"
+                className="pointer-events-auto p-2 rounded-lg bg-[#201b05]/95 border border-[#00ff88] text-[#00ff88] hover:bg-[#00ff88] hover:text-[#141204] transition-colors"
                 title="Expand High-Res Infographic"
               >
                 <Maximize2 className="w-4 h-4" />
@@ -123,22 +123,22 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
           <div
             className="p-4 sm:p-5 relative overflow-hidden"
             style={{
-              background: `linear-gradient(145deg, ${data.theme.bg} 0%, #081c18 100%)`,
+              background: `linear-gradient(145deg, #241e06 0%, #141204 100%)`,
             }}
           >
             {/* Header Ribbon */}
-            <div className="relative z-10 mb-3 pb-2.5 border-b border-white/10 flex items-start justify-between gap-3">
+            <div className="relative z-10 mb-3 pb-2.5 border-b border-yellow-500/15 flex items-start justify-between gap-3">
               <div>
                 <div className="flex items-center gap-1.5 mb-0.5">
                   <span className="text-[10px] font-mono font-bold tracking-widest text-[#ffd700] uppercase flex items-center gap-1">
-                    <Sparkles className="w-3 h-3 text-[#ffd700]" />
+                    <Sparkles className="w-3 h-3 text-[#00ff88]" />
                     6-PANEL TECHNICAL INFOGRAPHIC
                   </span>
                 </div>
                 <h4 className="text-xs sm:text-sm font-black tracking-wide text-white uppercase">
                   {data.title}
                 </h4>
-                <p className="text-[10px] font-mono text-slate-300">{data.subtitle}</p>
+                <p className="text-[10px] font-mono text-yellow-500/80">{data.subtitle}</p>
               </div>
 
               <button
@@ -147,7 +147,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
                   e.stopPropagation();
                   setModalOpen(true);
                 }}
-                className="p-1.5 shrink-0 rounded bg-white/5 border border-white/15 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors"
+                className="p-1.5 shrink-0 rounded bg-white/5 border border-[#ffd700]/25 text-slate-300 hover:text-[#00ff88] hover:border-[#00ff88] transition-colors"
                 title="Inspect High-Res Visual"
               >
                 <Maximize2 className="w-3.5 h-3.5" />
@@ -159,18 +159,14 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
               {data.panels.map((panel, idx) => (
                 <div
                   key={panel.id}
-                  className="p-2 rounded-lg border border-white/10 bg-black/50 hover:border-[#ffd700]/70 transition-all duration-200"
+                  className="p-2 rounded-lg border border-yellow-500/15 bg-black/50 hover:border-[#ffd700]/70 transition-all duration-200"
                 >
                   <div className="flex items-center justify-between gap-1 mb-1">
-                    <span className="text-[9px] font-mono font-bold text-slate-400">
+                    <span className="text-[9px] font-mono font-bold text-yellow-500/70">
                       0{idx + 1}
                     </span>
                     <span
-                      className="text-[8px] font-mono px-1 py-0.5 rounded text-slate-200 border"
-                      style={{
-                        borderColor: `${data.theme.accent1}40`,
-                        backgroundColor: `${data.theme.accent1}15`,
-                      }}
+                      className="text-[8px] font-mono px-1 py-0.5 rounded text-[#ffd700] border border-[#ffd700]/30 bg-[#ffd700]/10"
                     >
                       {panel.badge}
                     </span>
@@ -180,7 +176,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
                     {panel.title}
                   </h5>
 
-                  <div className="text-[11px] font-mono font-semibold truncate" style={{ color: data.theme.accent1 }}>
+                  <div className="text-[11px] font-mono font-semibold truncate text-[#ffd700]">
                     {panel.stat}
                   </div>
 
@@ -191,9 +187,9 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
               ))}
             </div>
 
-            <div className="relative z-10 mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-slate-400">
+            <div className="relative z-10 mt-2.5 pt-2 border-t border-yellow-500/15 flex items-center justify-between text-[10px] font-mono text-yellow-500/70">
               <span className="flex items-center gap-1">
-                <Cpu className="w-3 h-3 text-[#5fdee7]" />
+                <Cpu className="w-3 h-3 text-[#00ff88]" />
                 LAB HARDWARE MAP
               </span>
               <span className="text-[#ffd700]">technewscentrals</span>
@@ -209,25 +205,25 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
           onClick={() => setModalOpen(false)}
         >
           <div
-            className="relative max-w-5xl w-full bg-[#0b2721] border border-[#ffd700] rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]"
+            className="relative max-w-5xl w-full bg-[#201b05] border border-[#ffd700] rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between p-3.5 border-b border-[#5fdee7]/20 bg-[#081c18]">
+            <div className="flex items-center justify-between p-3.5 border-b border-yellow-500/20 bg-[#141204]">
               <div>
-                <span className="text-[11px] font-mono text-[#ffd700] uppercase tracking-wider font-bold">
+                <span className="text-[11px] font-mono text-[#00ff88] uppercase tracking-wider font-bold">
                   HIGH-RES REALISTIC TECHNICAL INFOGRAPHIC
                 </span>
                 <h3 className="text-sm md:text-base font-bold text-white uppercase">{data.title}</h3>
-                <p className="text-[11px] font-mono text-slate-400">{data.subtitle}</p>
+                <p className="text-[11px] font-mono text-yellow-500/70">{data.subtitle}</p>
               </div>
 
               <div className="flex items-center gap-2">
-                <div className="flex items-center border border-white/15 rounded-lg p-0.5 bg-[#0b2721]">
+                <div className="flex items-center border border-yellow-500/20 rounded-lg p-0.5 bg-[#201b05]">
                   <button
                     type="button"
                     onClick={() => setViewMode('image')}
                     className={`px-2.5 py-1 text-xs font-mono rounded ${
-                      viewMode === 'image' ? 'bg-[#ffd700] text-[#081c18] font-bold' : 'text-slate-300'
+                      viewMode === 'image' ? 'bg-[#ffd700] text-[#141204] font-bold' : 'text-slate-300'
                     }`}
                   >
                     AI Real Picture
@@ -236,7 +232,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
                     type="button"
                     onClick={() => setViewMode('schematic')}
                     className={`px-2.5 py-1 text-xs font-mono rounded ${
-                      viewMode === 'schematic' ? 'bg-[#ffd700] text-[#081c18] font-bold' : 'text-slate-300'
+                      viewMode === 'schematic' ? 'bg-[#ffd700] text-[#141204] font-bold' : 'text-slate-300'
                     }`}
                   >
                     6-Panel Specs
@@ -258,7 +254,7 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
                   <img
                     src={aiImageUrl}
                     alt={data.title}
-                    className="w-full h-auto rounded-xl shadow-2xl border border-white/10"
+                    className="w-full h-auto rounded-xl shadow-2xl border border-yellow-500/20"
                   />
                 </div>
               ) : (
@@ -266,23 +262,23 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
                   {data.panels.map((panel, idx) => (
                     <div
                       key={panel.id}
-                      className="p-4 rounded-xl border border-white/15 bg-black/60 hover:border-[#ffd700] transition-colors"
+                      className="p-4 rounded-xl border border-yellow-500/20 bg-black/60 hover:border-[#ffd700] transition-colors"
                     >
                       <div className="flex items-center justify-between mb-2">
                         <span className="text-xs font-mono font-bold text-[#ffd700]">
                           PANEL 0{idx + 1}
                         </span>
-                        <span className="text-[10px] font-mono px-2 py-0.5 rounded border border-[#5fdee7]/40 text-[#5fdee7] bg-[#5fdee7]/10">
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded border border-[#ffd700]/40 text-[#ffd700] bg-[#ffd700]/10">
                           {panel.badge}
                         </span>
                       </div>
                       <h4 className="text-sm font-bold text-white uppercase">{panel.title}</h4>
-                      <div className="text-sm font-mono font-bold my-1 text-[#ffd700]">{panel.stat}</div>
+                      <div className="text-sm font-mono font-bold my-1 text-[#00ff88]">{panel.stat}</div>
                       <p className="text-xs text-slate-300 mb-3">{panel.description}</p>
-                      <div className="space-y-1 pt-2 border-t border-white/10 text-xs text-slate-400">
+                      <div className="space-y-1 pt-2 border-t border-yellow-500/10 text-xs text-yellow-500/70">
                         {panel.details.map((d, i) => (
                           <div key={i} className="flex items-start gap-1.5">
-                            <span className="text-[#5fdee7]">›</span>
+                            <span className="text-[#00ff88]">›</span>
                             <span>{d}</span>
                           </div>
                         ))}
@@ -293,12 +289,12 @@ export const InfographicVisual: React.FC<InfographicVisualProps> = ({
               )}
             </div>
 
-            <div className="p-3 border-t border-white/10 bg-[#081c18] flex items-center justify-between text-xs font-mono text-slate-400">
+            <div className="p-3 border-t border-yellow-500/20 bg-[#141204] flex items-center justify-between text-xs font-mono text-yellow-500/70">
               <span>technewscentrals Peer-Reviewed Visual Asset</span>
               <button
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="px-4 py-1.5 rounded-lg bg-[#ffd700] text-[#081c18] font-bold hover:bg-[#ffcc00] transition-colors"
+                className="px-4 py-1.5 rounded-lg bg-[#ffd700] text-[#141204] font-bold hover:bg-[#00ff88] transition-colors"
               >
                 Close Viewer
               </button>

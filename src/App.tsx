@@ -16,13 +16,13 @@ import { BookmarksModal } from './components/BookmarksModal';
 import { PagesModal, PageViewType } from './components/PagesModal';
 import { CookieConsent } from './components/CookieConsent';
 import { Footer } from './components/Footer';
+import { GreenCursor } from './components/GreenCursor';
 import {
   Sparkles,
   ArrowRight,
   Send,
   CheckCircle2,
   Filter,
-  Layers,
   BookOpen,
 } from 'lucide-react';
 
@@ -87,7 +87,10 @@ export default function App() {
   const leadArticle = ALL_ARTICLES[0];
 
   return (
-    <div className="min-h-screen bg-[#081c18] text-slate-100 flex flex-col font-sans selection:bg-[#ffd700] selection:text-black">
+    <div className="min-h-screen bg-[#141204] text-slate-100 flex flex-col font-sans selection:bg-[#00ff88] selection:text-black">
+      {/* Dynamic Animated Green Cursor */}
+      <GreenCursor />
+
       {/* 1. Navigation Bar */}
       <Navbar
         currentCategory={selectedCategory}
@@ -103,14 +106,14 @@ export default function App() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full space-y-12">
-        {/* Hero Marquee Section (Lead Investigation) */}
+        {/* Hero Marquee Section (Lead Investigation) in Cyber Gold / Yellow */}
         {selectedCategory === 'all' && (
-          <section className="relative rounded-2xl border border-[#5fdee7]/30 bg-gradient-to-br from-[#0b2721] to-[#081c18] overflow-hidden p-6 sm:p-8 lg:p-10 shadow-2xl">
-            {/* Background High-Tech Grid */}
+          <section className="relative rounded-2xl border border-[#ffd700]/35 bg-gradient-to-br from-[#262007] via-[#1a1504] to-[#141204] overflow-hidden p-6 sm:p-8 lg:p-10 shadow-2xl">
+            {/* Background High-Tech Grid with Yellow Glow */}
             <div
-              className="absolute inset-0 opacity-10 pointer-events-none"
+              className="absolute inset-0 opacity-15 pointer-events-none"
               style={{
-                backgroundImage: 'radial-gradient(#5fdee7 1px, transparent 1px)',
+                backgroundImage: 'radial-gradient(#ffd700 1.2px, transparent 1.2px)',
                 backgroundSize: '24px 24px',
               }}
             />
@@ -118,20 +121,20 @@ export default function App() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Text Left Column */}
               <div className="lg:col-span-7 space-y-4">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#ffd700]">
-                  <Sparkles className="w-4 h-4 text-[#ffd700]" />
+                <div className="flex items-center gap-2 text-xs font-mono text-[#00ff88]">
+                  <Sparkles className="w-4 h-4 text-[#00ff88]" />
                   <span className="font-bold tracking-widest uppercase">
                     FEATURED PEER-REVIEWED INVESTIGATION
                   </span>
-                  <span className="text-slate-600">·</span>
-                  <span className="text-slate-400">VOL. XXIV — ISSUE 10</span>
+                  <span className="text-yellow-600/40">·</span>
+                  <span className="text-yellow-500/70">VOL. XXIV — ISSUE 10</span>
                 </div>
 
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
                   {leadArticle.title}
                 </h1>
 
-                <p className="text-xs sm:text-sm font-mono text-[#5fdee7] uppercase tracking-wide">
+                <p className="text-xs sm:text-sm font-mono text-[#ffd700] uppercase tracking-wide">
                   {leadArticle.subtitle}
                 </p>
 
@@ -140,11 +143,11 @@ export default function App() {
                 </p>
 
                 {/* Unboxed Metadata Line */}
-                <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400">
+                <div className="pt-2 flex flex-wrap items-center gap-2 text-xs font-mono text-yellow-500/80">
                   <span className="text-white font-semibold">{leadArticle.author.name}</span>
-                  <span aria-hidden="true" className="text-slate-600">·</span>
+                  <span aria-hidden="true" className="text-yellow-600/40">·</span>
                   <span>{leadArticle.readTime}</span>
-                  <span aria-hidden="true" className="text-slate-600">·</span>
+                  <span aria-hidden="true" className="text-yellow-600/40">·</span>
                   <span>{leadArticle.publishDate}</span>
                 </div>
 
@@ -152,7 +155,7 @@ export default function App() {
                 <div className="pt-3 flex items-center gap-3">
                   <button
                     onClick={() => setActiveArticle(leadArticle)}
-                    className="tech-hover-btn px-5 py-2.5 rounded-xl border border-[#5fdee7] bg-[#5fdee7] text-[#081c18] font-mono text-xs font-black uppercase tracking-wider flex items-center gap-2 shadow-lg"
+                    className="tech-hover-btn px-5 py-2.5 rounded-xl border border-[#ffd700] bg-[#ffd700] text-[#141204] font-mono text-xs font-black uppercase tracking-wider flex items-center gap-2 shadow-lg"
                   >
                     <span>Read Full 1200+ Word Analysis</span>
                     <ArrowRight className="w-4 h-4" />
@@ -160,7 +163,7 @@ export default function App() {
 
                   <button
                     onClick={() => toggleBookmark(leadArticle.id)}
-                    className="tech-hover-item px-4 py-2.5 rounded-xl border border-[#5fdee7]/30 bg-[#0b2721] text-xs font-mono text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors"
+                    className="tech-hover-item px-4 py-2.5 rounded-xl border border-[#ffd700]/30 bg-[#201b05] text-xs font-mono text-slate-300 hover:text-[#00ff88] hover:border-[#00ff88] transition-colors"
                   >
                     {savedIds.includes(leadArticle.id) ? 'Saved' : 'Save to Vault'}
                   </button>
@@ -170,16 +173,16 @@ export default function App() {
               {/* Visual Right Column (Hero Infographic) */}
               <div
                 onClick={() => setActiveArticle(leadArticle)}
-                className="lg:col-span-5 cursor-pointer group rounded-xl overflow-hidden border border-[#5fdee7]/30 bg-[#0a1624] hover:border-[#ffd700] transition-all duration-300"
+                className="lg:col-span-5 cursor-pointer group rounded-xl overflow-hidden border border-[#ffd700]/30 bg-[#1c1704] hover:border-[#00ff88] transition-all duration-300 shadow-xl"
               >
                 <img
                   src="/src/assets/images/hero_flagship_infographic_1792653207089.jpg"
                   alt="Best Flagship Smartphones 2026 Infographic"
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="p-3 bg-[#0b2721] border-t border-[#5fdee7]/20 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <div className="p-3 bg-[#201b05] border-t border-[#ffd700]/20 flex items-center justify-between text-[11px] font-mono text-yellow-500/80">
                   <span className="text-[#ffd700] flex items-center gap-1">
-                    <BookOpen className="w-3.5 h-3.5" />
+                    <BookOpen className="w-3.5 h-3.5 text-[#00ff88]" />
                     Interactive 6-Panel Hardware Map
                   </span>
                   <span>Click to Expand</span>
@@ -191,10 +194,10 @@ export default function App() {
 
         {/* Category Header & Filter Bar */}
         <section className="space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-yellow-500/15 pb-4">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono text-[#5fdee7]">
-                <Filter className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2 text-xs font-mono text-[#ffd700]">
+                <Filter className="w-3.5 h-3.5 text-[#00ff88]" />
                 <span className="uppercase tracking-wider font-bold">DISPATCH CATALOG</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-0.5">
@@ -204,19 +207,19 @@ export default function App() {
               </h2>
             </div>
 
-            <span className="text-xs font-mono text-slate-400">
+            <span className="text-xs font-mono text-yellow-500/70">
               Showing {filteredArticles.length} Technical Papers
             </span>
           </div>
 
-          {/* Segmented Category Filter Buttons */}
-          <div className="flex items-center gap-1.5 p-1 bg-[#0b2721] rounded-xl border border-[#5fdee7]/20 overflow-x-auto">
+          {/* Segmented Category Filter Buttons in Yellow Theme */}
+          <div className="flex items-center gap-1.5 p-1 bg-[#201b05] rounded-xl border border-[#ffd700]/25 overflow-x-auto">
             <button
               onClick={() => setSelectedCategory('all')}
               className={`px-3 py-1.5 text-xs font-mono font-bold rounded-lg transition-all whitespace-nowrap ${
                 selectedCategory === 'all'
-                  ? 'bg-[#ffd700] text-[#081c18] shadow-sm'
-                  : 'text-slate-300 hover:text-[#ffd700]'
+                  ? 'bg-[#ffd700] text-[#141204] shadow-sm'
+                  : 'text-slate-300 hover:text-[#00ff88]'
               }`}
             >
               All Feed (20)
@@ -227,8 +230,8 @@ export default function App() {
                 onClick={() => setSelectedCategory(cat.id)}
                 className={`px-3 py-1.5 text-xs font-mono font-bold rounded-lg transition-all whitespace-nowrap ${
                   selectedCategory === cat.id
-                    ? 'bg-[#ffd700] text-[#081c18] shadow-sm'
-                    : 'text-slate-300 hover:text-[#ffd700]'
+                    ? 'bg-[#ffd700] text-[#141204] shadow-sm'
+                    : 'text-slate-300 hover:text-[#00ff88]'
                 }`}
               >
                 {cat.name} ({cat.articleCount})
@@ -251,8 +254,8 @@ export default function App() {
           ))}
         </section>
 
-        {/* Newsletter / Dispatch Subscription Section */}
-        <section className="rounded-2xl border border-[#ffd700]/40 bg-[#0b2721] p-6 sm:p-8 lg:p-10 space-y-4 shadow-xl">
+        {/* Newsletter / Dispatch Subscription Section in Cyber Yellow */}
+        <section className="rounded-2xl border border-[#ffd700]/40 bg-[#201b05] p-6 sm:p-8 lg:p-10 space-y-4 shadow-xl">
           <div className="max-w-2xl mx-auto text-center space-y-2">
             <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-widest">
               PEER-REVIEWED JOURNAL SUBSCRIPTION
@@ -265,8 +268,8 @@ export default function App() {
             </p>
 
             {newsletterSubscribed ? (
-              <div className="mt-4 p-4 rounded-xl bg-emerald-950/70 border border-emerald-500/50 text-emerald-300 text-xs font-mono flex items-center justify-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <div className="mt-4 p-4 rounded-xl bg-emerald-950/70 border border-[#00ff88]/50 text-[#00ff88] text-xs font-mono flex items-center justify-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-[#00ff88]" />
                 <span>Subscription authenticated. You will receive tomorrow’s engineering dispatch.</span>
               </div>
             ) : (
@@ -280,11 +283,11 @@ export default function App() {
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   placeholder="engineer@domain.com"
-                  className="flex-1 px-4 py-2.5 rounded-xl bg-[#081c18] border border-white/20 text-xs font-mono text-white placeholder-slate-500 focus:outline-none focus:border-[#ffd700]"
+                  className="flex-1 px-4 py-2.5 rounded-xl bg-[#141204] border border-[#ffd700]/25 text-xs font-mono text-white placeholder-yellow-500/50 focus:outline-none focus:border-[#00ff88]"
                 />
                 <button
                   type="submit"
-                  className="tech-hover-btn px-5 py-2.5 rounded-xl bg-[#ffd700] text-[#081c18] font-mono text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors"
+                  className="tech-hover-btn px-5 py-2.5 rounded-xl bg-[#ffd700] text-[#141204] font-mono text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Subscribe</span>
@@ -292,7 +295,7 @@ export default function App() {
               </form>
             )}
 
-            <p className="text-[10px] font-mono text-slate-500 pt-1">
+            <p className="text-[10px] font-mono text-yellow-500/60 pt-1">
               Zero third-party trackers. Instant 1-click unsubscribe anytime.
             </p>
           </div>

@@ -74,33 +74,33 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl h-[94vh] bg-[#081c18] border border-[#5fdee7]/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+        className="relative w-full max-w-4xl h-[94vh] bg-[#141204] border border-[#ffd700]/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Reading Depth Progress Bar */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-black/40 z-30">
           <div
-            className="h-full bg-[#ffd700] transition-all duration-150"
+            className="h-full bg-[#00ff88] transition-all duration-150"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>
 
         {/* Modal Top Command Bar */}
-        <div className="shrink-0 px-4 sm:px-6 py-3 border-b border-[#5fdee7]/20 bg-[#0b2721] flex items-center justify-between gap-4 z-20">
-          <div className="flex items-center gap-2 text-xs font-mono text-[#5fdee7] truncate">
-            <ShieldCheck className="w-4 h-4 text-[#ffd700] shrink-0" />
+        <div className="shrink-0 px-4 sm:px-6 py-3 border-b border-[#ffd700]/20 bg-[#201b05] flex items-center justify-between gap-4 z-20">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#ffd700] truncate">
+            <ShieldCheck className="w-4 h-4 text-[#00ff88] shrink-0" />
             <span className="truncate uppercase font-bold">{article.category}</span>
-            <span className="text-slate-500">/</span>
-            <span className="text-slate-400 truncate">{article.keyword}</span>
+            <span className="text-yellow-600/40">/</span>
+            <span className="text-slate-300 truncate">{article.keyword}</span>
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
             {/* Font Size Toggle */}
-            <div className="flex items-center border border-white/10 rounded-lg p-0.5 bg-[#081c18]">
+            <div className="flex items-center border border-[#ffd700]/20 rounded-lg p-0.5 bg-[#141204]">
               <button
                 onClick={() => setFontSize('normal')}
                 className={`px-2 py-1 text-xs font-mono font-bold rounded ${
-                  fontSize === 'normal' ? 'bg-[#ffd700] text-[#081c18]' : 'text-slate-400 hover:text-white'
+                  fontSize === 'normal' ? 'bg-[#ffd700] text-[#141204]' : 'text-slate-400 hover:text-white'
                 }`}
                 title="Normal Text Size"
               >
@@ -109,7 +109,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
               <button
                 onClick={() => setFontSize('large')}
                 className={`px-2 py-1 text-sm font-mono font-bold rounded ${
-                  fontSize === 'large' ? 'bg-[#ffd700] text-[#081c18]' : 'text-slate-400 hover:text-white'
+                  fontSize === 'large' ? 'bg-[#ffd700] text-[#141204]' : 'text-slate-400 hover:text-white'
                 }`}
                 title="Large Text Size"
               >
@@ -122,27 +122,27 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
               onClick={() => onToggleBookmark(article.id)}
               className={`p-2 rounded-lg border transition-colors ${
                 isBookmarked
-                  ? 'border-[#ffd700] bg-[#ffd700]/20 text-[#ffd700]'
-                  : 'border-white/10 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700]'
+                  ? 'border-[#00ff88] bg-[#00ff88]/20 text-[#00ff88]'
+                  : 'border-[#ffd700]/20 text-slate-300 hover:text-[#00ff88] hover:border-[#00ff88]'
               }`}
               title={isBookmarked ? 'Saved' : 'Save Article'}
             >
-              <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-[#ffd700]' : ''}`} />
+              <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-[#00ff88]' : ''}`} />
             </button>
 
             {/* Share / Copy Link */}
             <button
               onClick={handleShare}
-              className="p-2 rounded-lg border border-white/10 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors relative"
+              className="p-2 rounded-lg border border-[#ffd700]/20 text-slate-300 hover:text-[#00ff88] hover:border-[#00ff88] transition-colors relative"
               title="Copy Article URL"
             >
-              {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Share2 className="w-4 h-4" />}
+              {copied ? <Check className="w-4 h-4 text-[#00ff88]" /> : <Share2 className="w-4 h-4" />}
             </button>
 
             {/* Print Button */}
             <button
               onClick={handlePrint}
-              className="hidden sm:inline-flex p-2 rounded-lg border border-white/10 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors"
+              className="hidden sm:inline-flex p-2 rounded-lg border border-[#ffd700]/20 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors"
               title="Print Clean Article"
             >
               <Printer className="w-4 h-4" />
@@ -165,40 +165,40 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
           className="flex-1 overflow-y-auto p-5 sm:p-8 lg:p-10 space-y-8 max-w-prose mx-auto w-full"
         >
           {/* Article Header & Typography */}
-          <div className="space-y-4 border-b border-white/10 pb-6">
+          <div className="space-y-4 border-b border-yellow-500/15 pb-6">
             {/* Unboxed Metadata Line */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-yellow-500/80">
               <span className="text-[#ffd700] font-bold uppercase">{article.category}</span>
-              <span aria-hidden="true" className="text-slate-600">·</span>
+              <span aria-hidden="true" className="text-yellow-600/40">·</span>
               <span>Published {article.publishDate}</span>
-              <span aria-hidden="true" className="text-slate-600">·</span>
+              <span aria-hidden="true" className="text-yellow-600/40">·</span>
               <span>{article.readTime}</span>
-              <span aria-hidden="true" className="text-slate-600">·</span>
-              <span>PEER REVIEWED IN LAB</span>
+              <span aria-hidden="true" className="text-yellow-600/40">·</span>
+              <span className="text-[#00ff88]">PEER REVIEWED IN LAB</span>
             </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
               {article.title}
             </h1>
 
-            <p className="text-sm sm:text-base font-mono text-[#5fdee7] uppercase tracking-wide">
+            <p className="text-sm sm:text-base font-mono text-[#ffd700] uppercase tracking-wide">
               {article.subtitle}
             </p>
 
             {/* Author Attribution Card */}
             <div className="pt-3 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#0b2721] border border-[#ffd700] flex items-center justify-center font-mono font-bold text-sm text-[#ffd700] shrink-0">
+              <div className="w-10 h-10 rounded-full bg-[#201b05] border border-[#ffd700] flex items-center justify-center font-mono font-bold text-sm text-[#ffd700] shrink-0">
                 {article.author.name.slice(0, 2).toUpperCase()}
               </div>
               <div>
                 <p className="text-sm font-bold text-slate-100">{article.author.name}</p>
-                <p className="text-xs font-mono text-slate-400">{article.author.role}</p>
+                <p className="text-xs font-mono text-yellow-500/70">{article.author.role}</p>
               </div>
             </div>
           </div>
 
-          {/* Lead Summary Deck */}
-          <div className="p-4 sm:p-5 rounded-xl border border-[#5fdee7]/30 bg-[#0b2721]/60 text-slate-200 italic leading-relaxed text-sm sm:text-base">
+          {/* Lead Summary Deck in Warm Yellow Slate */}
+          <div className="p-4 sm:p-5 rounded-xl border border-[#ffd700]/30 bg-[#201b05]/80 text-slate-200 italic leading-relaxed text-sm sm:text-base">
             {article.leadSummary}
           </div>
 
@@ -221,7 +221,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
           <div className="space-y-8 text-slate-300">
             {article.sections.map((section, idx) => (
               <section key={idx} className="space-y-4">
-                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight pt-2 border-t border-white/5">
+                <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight pt-2 border-t border-yellow-500/10">
                   {section.heading}
                 </h2>
 
@@ -238,20 +238,20 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                 ))}
 
                 {section.quote && (
-                  <blockquote className="my-6 p-4 border-y border-[#ffd700]/40 text-lg sm:text-xl font-serif italic text-slate-100 bg-[#0b2721]/30">
+                  <blockquote className="my-6 p-4 border-y border-[#ffd700]/40 text-lg sm:text-xl font-serif italic text-slate-100 bg-[#201b05]/50">
                     “{section.quote}”
                   </blockquote>
                 )}
 
                 {section.takeaways && section.takeaways.length > 0 && (
-                  <div className="p-4 rounded-xl border border-white/10 bg-black/40 space-y-2 mt-4">
-                    <span className="text-xs font-mono font-bold text-[#5fdee7] uppercase tracking-wider block">
+                  <div className="p-4 rounded-xl border border-yellow-500/20 bg-black/40 space-y-2 mt-4">
+                    <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider block">
                       ARCHITECTURAL INVARIANTS:
                     </span>
                     <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
                       {section.takeaways.map((takeaway, tIdx) => (
                         <li key={tIdx} className="flex items-start gap-2">
-                          <span className="text-[#ffd700] font-bold">›</span>
+                          <span className="text-[#00ff88] font-bold">›</span>
                           <span>{takeaway}</span>
                         </li>
                       ))}
@@ -263,7 +263,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
           </div>
 
           {/* Laboratory Benchmark Matrix */}
-          <section className="space-y-3 pt-4 border-t border-white/10">
+          <section className="space-y-3 pt-4 border-t border-yellow-500/15">
             <div className="flex items-center gap-2">
               <Award className="w-4 h-4 text-[#ffd700]" />
               <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-tight font-mono">
@@ -271,9 +271,9 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
               </h3>
             </div>
 
-            <div className="overflow-x-auto rounded-xl border border-[#5fdee7]/30 bg-[#0b2721]/80">
+            <div className="overflow-x-auto rounded-xl border border-[#ffd700]/30 bg-[#201b05]/90">
               <table className="w-full text-left text-xs font-mono">
-                <thead className="bg-[#051411] text-[#5fdee7] uppercase tracking-wider border-b border-[#5fdee7]/20">
+                <thead className="bg-[#120f03] text-[#ffd700] uppercase tracking-wider border-b border-[#ffd700]/20">
                   <tr>
                     {article.benchmarkTable.headers.map((h, i) => (
                       <th key={i} className="p-3 whitespace-nowrap">
@@ -282,18 +282,18 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-yellow-500/10">
                   {article.benchmarkTable.rows.map((row, rIdx) => (
                     <tr
                       key={rIdx}
                       className={
                         row.highlight
-                          ? 'bg-[#ffd700]/10 font-bold text-white'
+                          ? 'bg-[#ffd700]/15 font-bold text-white'
                           : 'text-slate-300 hover:bg-white/5'
                       }
                     >
                       <td className="p-3 flex items-center gap-1.5 whitespace-nowrap">
-                        {row.highlight && <span className="text-[#ffd700]">★</span>}
+                        {row.highlight && <span className="text-[#00ff88]">★</span>}
                         <span>{row.device}</span>
                       </td>
                       {row.values.map((v, vIdx) => (
@@ -309,16 +309,16 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
           </section>
 
           {/* Peer-Reviewed Verdict Box */}
-          <section className="p-5 sm:p-6 rounded-2xl border-2 border-[#ffd700] bg-[#0b2721] space-y-4 shadow-xl">
-            <div className="flex items-center justify-between pb-3 border-b border-white/10">
+          <section className="p-5 sm:p-6 rounded-2xl border-2 border-[#ffd700] bg-[#201b05] space-y-4 shadow-xl">
+            <div className="flex items-center justify-between pb-3 border-b border-yellow-500/15">
               <div>
-                <span className="text-[10px] font-mono tracking-widest text-[#5fdee7] uppercase font-bold">
+                <span className="text-[10px] font-mono tracking-widest text-[#ffd700] uppercase font-bold">
                   TECHNEWSCENTRALS LABS OFFICIAL VERDICT
                 </span>
                 <h4 className="text-lg font-black text-white">{article.verdict.winner}</h4>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-black font-mono text-[#ffd700]">
+                <span className="text-2xl font-black font-mono text-[#00ff88]">
                   {article.verdict.finalScore}
                 </span>
               </div>
@@ -326,11 +326,11 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1.5">
-                <p className="text-xs font-mono font-bold text-emerald-400 uppercase">ENGINEERING PROS</p>
+                <p className="text-xs font-mono font-bold text-[#00ff88] uppercase">ENGINEERING PROS</p>
                 <ul className="space-y-1 text-xs text-slate-300">
                   {article.verdict.pros.map((pro, pIdx) => (
                     <li key={pIdx} className="flex items-start gap-1.5">
-                      <span className="text-emerald-400 font-bold">+</span>
+                      <span className="text-[#00ff88] font-bold">+</span>
                       <span>{pro}</span>
                     </li>
                   ))}
@@ -350,7 +350,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
               </div>
             </div>
 
-            <div className="pt-3 border-t border-white/10">
+            <div className="pt-3 border-t border-yellow-500/15">
               <p className="text-xs text-slate-300 leading-relaxed">
                 <strong className="text-white">Recommendation: </strong>
                 {article.verdict.recommendation}
@@ -360,7 +360,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
 
           {/* Related In-Depth Articles */}
           {article.relatedIds.length > 0 && (
-            <section className="space-y-3 pt-6 border-t border-white/10">
+            <section className="space-y-3 pt-6 border-t border-yellow-500/15">
               <h3 className="text-sm font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                 RELATED TECHNICAL ESSAYS IN THIS DOMAIN
               </h3>
@@ -372,19 +372,19 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
                     <button
                       key={rel.id}
                       onClick={() => onSelectRelated(rel)}
-                      className="text-left p-3 rounded-xl border border-white/10 bg-[#0b2721] hover:border-[#ffd700] transition-colors group flex flex-col justify-between"
+                      className="text-left p-3 rounded-xl border border-yellow-500/15 bg-[#201b05] hover:border-[#00ff88] transition-colors group flex flex-col justify-between"
                     >
                       <div>
-                        <span className="text-[10px] font-mono text-[#5fdee7] block mb-1">
+                        <span className="text-[10px] font-mono text-[#ffd700] block mb-1">
                           {rel.readTime} · {rel.category}
                         </span>
-                        <h5 className="text-xs font-bold text-white group-hover:text-[#ffd700] line-clamp-2">
+                        <h5 className="text-xs font-bold text-white group-hover:text-[#00ff88] line-clamp-2">
                           {rel.title}
                         </h5>
                       </div>
                       <div className="mt-2 flex items-center gap-1 text-[11px] font-mono text-slate-400 group-hover:text-white">
                         <span>Read Study</span>
-                        <ChevronRight className="w-3 h-3 text-[#ffd700]" />
+                        <ChevronRight className="w-3 h-3 text-[#00ff88]" />
                       </div>
                     </button>
                   );
@@ -394,7 +394,7 @@ export const ArticleDetailModal: React.FC<ArticleDetailModalProps> = ({
           )}
 
           {/* Article Footer & Official Newsroom Contact Badge */}
-          <div className="pt-6 border-t border-white/10 text-center text-xs font-mono text-slate-400 space-y-1">
+          <div className="pt-6 border-t border-yellow-500/15 text-center text-xs font-mono text-yellow-500/60 space-y-1">
             <p>Published by technewscentrals Editorial Newsroom · ISSN 2981-4412</p>
             <p>Peer review inquiries &amp; Corrections: sagheerofficial21dnb@gmail.com</p>
           </div>

@@ -24,10 +24,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [categoryDropdownOpen, setCategoryDropdownOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-[#081c18]/95 backdrop-blur-md border-b border-[#5fdee7]/20">
-      {/* Top Banner Tagline */}
-      <div className="bg-[#051310] border-b border-white/5 py-1 px-4 text-center">
-        <p className="text-[10px] md:text-[11px] font-mono tracking-widest text-[#5fdee7] uppercase font-semibold">
+    <header className="sticky top-0 z-40 bg-[#141204]/95 backdrop-blur-md border-b border-[#ffd700]/25">
+      {/* Top Banner Tagline in Cyber Yellow */}
+      <div className="bg-[#100e02] border-b border-[#ffd700]/15 py-1 px-4 text-center">
+        <p className="text-[10px] md:text-[11px] font-mono tracking-widest text-[#ffd700] uppercase font-semibold">
           ENGINEERING &amp; CONSUMER TECH JOURNAL — PUBLISHED DAILY
         </p>
       </div>
@@ -40,14 +40,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => onSelectCategory('all')}
               className="flex items-center gap-2.5 text-left group"
             >
-              <div className="w-9 h-9 rounded-lg bg-[#0b2721] border border-[#5fdee7] flex items-center justify-center shadow-sm group-hover:border-[#ffd700] group-hover:shadow-[0_0_12px_rgba(255,215,0,0.4)] transition-all">
+              <div className="w-9 h-9 rounded-lg bg-[#241e06] border border-[#ffd700] flex items-center justify-center shadow-sm group-hover:border-[#00ff88] group-hover:shadow-[0_0_12px_rgba(0,255,136,0.4)] transition-all">
                 <span className="font-mono font-black text-sm text-[#ffd700]">TC</span>
               </div>
               <div>
                 <span className="text-lg md:text-xl font-black tracking-tight text-white group-hover:text-[#ffd700] transition-colors uppercase font-mono">
                   technewscentrals
                 </span>
-                <span className="block text-[9px] font-mono tracking-wider text-slate-400">
+                <span className="block text-[9px] font-mono tracking-wider text-[#ffd700]/70">
                   PEER-REVIEWED TECH JOURNAL
                 </span>
               </div>
@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
 
-              <div className="absolute top-full left-0 mt-2 w-72 rounded-xl bg-[#0b2721] border border-[#5fdee7]/30 shadow-2xl p-2 hidden group-hover:block hover:block">
+              <div className="absolute top-full left-0 mt-2 w-72 rounded-xl bg-[#241e06] border border-[#ffd700]/30 shadow-2xl p-2 hidden group-hover:block hover:block">
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat.id}
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     }}
                     className={`w-full text-left p-2.5 rounded-lg text-xs transition-colors flex flex-col gap-0.5 ${
                       currentCategory === cat.id
-                        ? 'bg-[#ffd700]/10 border border-[#ffd700] text-[#ffd700]'
+                        ? 'bg-[#ffd700]/15 border border-[#ffd700] text-[#ffd700]'
                         : 'text-slate-300 hover:bg-white/5 hover:text-white'
                     }`}
                   >
@@ -133,7 +133,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center gap-2.5 shrink-0">
             <button
               onClick={onOpenSearch}
-              className="p-2 rounded-lg bg-[#0b2721] border border-[#5fdee7]/30 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors"
+              className="p-2 rounded-lg bg-[#241e06] border border-[#ffd700]/30 text-slate-300 hover:text-[#00ff88] hover:border-[#00ff88] transition-colors"
               title="Search 20 Technical Articles"
             >
               <Search className="w-4 h-4" />
@@ -141,12 +141,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={onOpenBookmarks}
-              className="relative p-2 rounded-lg bg-[#0b2721] border border-[#5fdee7]/30 text-slate-300 hover:text-[#ffd700] hover:border-[#ffd700] transition-colors"
+              className="relative p-2 rounded-lg bg-[#241e06] border border-[#ffd700]/30 text-slate-300 hover:text-[#00ff88] hover:border-[#00ff88] transition-colors"
               title="Saved Articles"
             >
               <Bookmark className="w-4 h-4" />
               {savedCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#ffd700] text-[#081c18] text-[9px] font-mono font-bold flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#ffd700] text-[#141204] text-[9px] font-mono font-bold flex items-center justify-center">
                   {savedCount}
                 </span>
               )}
@@ -154,16 +154,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => onOpenPage('about')}
-              className="tech-hover-btn hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-bold uppercase rounded-lg border border-[#5fdee7] text-[#5fdee7] bg-transparent"
+              className="tech-hover-btn hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-mono font-bold uppercase rounded-lg border border-[#ffd700] text-[#ffd700] bg-transparent"
             >
-              <Bell className="w-3.5 h-3.5 text-[#ffd700]" />
+              <Bell className="w-3.5 h-3.5 text-[#00ff88]" />
               <span>Dispatch Sub</span>
             </button>
 
             {/* Mobile Menu Trigger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg bg-[#0b2721] border border-[#5fdee7]/30 text-slate-300 lg:hidden"
+              className="p-2 rounded-lg bg-[#241e06] border border-[#ffd700]/30 text-slate-300 lg:hidden"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -172,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-[#5fdee7]/20 space-y-2">
+          <div className="lg:hidden py-4 border-t border-[#ffd700]/20 space-y-2">
             <button
               onClick={() => {
                 onSelectCategory('all');
@@ -183,7 +183,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Home Feed
             </button>
 
-            <div className="px-3 pt-2 pb-1 text-xs font-mono text-[#5fdee7] uppercase tracking-wider">
+            <div className="px-3 pt-2 pb-1 text-xs font-mono text-[#ffd700] uppercase tracking-wider">
               Categories
             </div>
             {CATEGORIES.map((cat) => (

@@ -39,17 +39,17 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl h-[90vh] bg-[#081c18] border border-[#5fdee7]/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+        className="relative w-full max-w-4xl h-[90vh] bg-[#141204] border border-[#ffd700]/40 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Navigation Ribbon inside modal */}
-        <div className="shrink-0 px-4 sm:px-6 py-3 border-b border-[#5fdee7]/20 bg-[#0b2721] flex items-center justify-between gap-3 overflow-x-auto">
+        <div className="shrink-0 px-4 sm:px-6 py-3 border-b border-[#ffd700]/20 bg-[#201b05] flex items-center justify-between gap-3 overflow-x-auto">
           <div className="flex items-center gap-2 text-xs font-mono font-bold tracking-wider uppercase">
             <button
               onClick={() => onSwitchPage('about')}
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap ${
                 page === 'about'
-                  ? 'bg-[#ffd700] text-[#081c18]'
+                  ? 'bg-[#ffd700] text-[#141204]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -59,7 +59,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               onClick={() => onSwitchPage('editors')}
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap ${
                 page === 'editors'
-                  ? 'bg-[#ffd700] text-[#081c18]'
+                  ? 'bg-[#ffd700] text-[#141204]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -69,7 +69,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               onClick={() => onSwitchPage('standards')}
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap ${
                 page === 'standards'
-                  ? 'bg-[#ffd700] text-[#081c18]'
+                  ? 'bg-[#ffd700] text-[#141204]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -79,7 +79,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               onClick={() => onSwitchPage('contact')}
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap ${
                 page === 'contact'
-                  ? 'bg-[#ffd700] text-[#081c18]'
+                  ? 'bg-[#ffd700] text-[#141204]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -89,7 +89,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               onClick={() => onSwitchPage('privacy')}
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap ${
                 page === 'privacy'
-                  ? 'bg-[#ffd700] text-[#081c18]'
+                  ? 'bg-[#ffd700] text-[#141204]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -99,7 +99,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               onClick={() => onSwitchPage('terms')}
               className={`px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap ${
                 page === 'terms'
-                  ? 'bg-[#ffd700] text-[#081c18]'
+                  ? 'bg-[#ffd700] text-[#141204]'
                   : 'text-slate-300 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -119,14 +119,14 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
         <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 max-w-3xl mx-auto w-full text-slate-300">
           {page === 'about' && (
             <div className="space-y-6">
-              <div className="border-b border-white/10 pb-4">
+              <div className="border-b border-yellow-500/15 pb-4">
                 <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                   INSTITUTIONAL PROFILE
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                   About technewscentrals
                 </h2>
-                <p className="text-sm font-mono text-[#5fdee7] mt-1">
+                <p className="text-sm font-mono text-[#ffd700] mt-1">
                   ENGINEERING &amp; CONSUMER TECH JOURNAL — PUBLISHED DAILY
                 </p>
               </div>
@@ -136,7 +136,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl border border-white/10 bg-[#0b2721]">
+                <div className="p-4 rounded-xl border border-yellow-500/20 bg-[#201b05]">
                   <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-1.5">
                     <Shield className="w-4 h-4 text-[#ffd700]" />
                     Hardware Testing Laboratory
@@ -145,9 +145,9 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
                     Our evaluations utilize calibrated thermal imaging, precision digital power analyzers, RF anechoic testing, and automated oscilloscope packet tracing.
                   </p>
                 </div>
-                <div className="p-4 rounded-xl border border-white/10 bg-[#0b2721]">
+                <div className="p-4 rounded-xl border border-yellow-500/20 bg-[#201b05]">
                   <h4 className="text-sm font-bold text-white mb-2 flex items-center gap-1.5">
-                    <FileText className="w-4 h-4 text-[#5fdee7]" />
+                    <FileText className="w-4 h-4 text-[#00ff88]" />
                     Uncompromising Editorial Integrity
                   </h4>
                   <p className="text-xs text-slate-300 leading-relaxed">
@@ -156,7 +156,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
                 </div>
               </div>
 
-              <div className="p-5 rounded-xl border border-[#ffd700]/30 bg-[#0b2721]/60 space-y-2">
+              <div className="p-5 rounded-xl border border-[#ffd700]/30 bg-[#201b05]/60 space-y-2">
                 <h4 className="text-xs font-mono font-bold text-[#ffd700] uppercase">
                   OUR CORE PILLARS OF INVESTIGATION
                 </h4>
@@ -172,14 +172,14 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
 
           {page === 'editors' && (
             <div className="space-y-6">
-              <div className="border-b border-white/10 pb-4">
+              <div className="border-b border-yellow-500/15 pb-4">
                 <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                   EDITORIAL MASTHEAD
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                   Editorial Board &amp; Senior Fellows
                 </h2>
-                <p className="text-xs font-mono text-slate-400 mt-1">
+                <p className="text-xs font-mono text-yellow-500/70 mt-1">
                   Engineers, cryptographers, and systems researchers leading technewscentrals investigations.
                 </p>
               </div>
@@ -188,15 +188,15 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
                 {Object.values(AUTHORS).map((author, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl border border-white/10 bg-[#0b2721] space-y-3"
+                    className="p-4 rounded-xl border border-yellow-500/15 bg-[#201b05] space-y-3"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-[#081c18] border border-[#ffd700] flex items-center justify-center font-mono font-black text-base text-[#ffd700] shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-[#141204] border border-[#ffd700] flex items-center justify-center font-mono font-black text-base text-[#ffd700] shrink-0">
                         {author.name.slice(0, 2).toUpperCase()}
                       </div>
                       <div>
                         <h4 className="text-sm font-bold text-white">{author.name}</h4>
-                        <p className="text-[11px] font-mono text-[#5fdee7]">{author.role}</p>
+                        <p className="text-[11px] font-mono text-[#00ff88]">{author.role}</p>
                       </div>
                     </div>
                     <p className="text-xs text-slate-300 leading-relaxed">{author.bio}</p>
@@ -208,7 +208,7 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
 
           {page === 'standards' && (
             <div className="space-y-6">
-              <div className="border-b border-white/10 pb-4">
+              <div className="border-b border-yellow-500/15 pb-4">
                 <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                   CODE OF CONDUCT &amp; PROTOCOL
                 </span>
@@ -244,31 +244,31 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
 
           {page === 'contact' && (
             <div className="space-y-6">
-              <div className="border-b border-white/10 pb-4">
+              <div className="border-b border-yellow-500/15 pb-4">
                 <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                   DIRECT ACCESS
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
                   Contact Editorial Newsroom
                 </h2>
-                <p className="text-xs font-mono text-slate-400 mt-1">
+                <p className="text-xs font-mono text-yellow-500/70 mt-1">
                   Official newsroom coordinates, hardware review submissions, and cryptographic leak hotlines.
                 </p>
               </div>
 
               {/* Official Verified Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl border-2 border-[#5fdee7] bg-[#0b2721] flex items-start gap-3">
-                  <div className="p-2.5 rounded-lg bg-[#081c18] border border-[#5fdee7] text-[#5fdee7]">
-                    <Phone className="w-5 h-5 text-[#ffd700]" />
+                <div className="p-4 rounded-xl border-2 border-[#ffd700] bg-[#201b05] flex items-start gap-3">
+                  <div className="p-2.5 rounded-lg bg-[#141204] border border-[#ffd700] text-[#ffd700]">
+                    <Phone className="w-5 h-5 text-[#00ff88]" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-yellow-500/70 block">
                       PHONE &amp; WHATSAPP
                     </span>
                     <a
                       href="tel:03069256639"
-                      className="text-base font-mono font-bold text-white hover:text-[#ffd700] transition-colors"
+                      className="text-base font-mono font-bold text-white hover:text-[#00ff88] transition-colors"
                     >
                       03069256639
                     </a>
@@ -278,17 +278,17 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl border-2 border-[#5fdee7] bg-[#0b2721] flex items-start gap-3">
-                  <div className="p-2.5 rounded-lg bg-[#081c18] border border-[#5fdee7] text-[#5fdee7]">
-                    <Mail className="w-5 h-5 text-[#ffd700]" />
+                <div className="p-4 rounded-xl border-2 border-[#ffd700] bg-[#201b05] flex items-start gap-3">
+                  <div className="p-2.5 rounded-lg bg-[#141204] border border-[#ffd700] text-[#ffd700]">
+                    <Mail className="w-5 h-5 text-[#00ff88]" />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 block">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-yellow-500/70 block">
                       OFFICIAL EDITORIAL EMAIL
                     </span>
                     <a
                       href="mailto:sagheerofficial21dnb@gmail.com"
-                      className="text-sm sm:text-base font-mono font-bold text-white hover:text-[#ffd700] transition-colors truncate block"
+                      className="text-sm sm:text-base font-mono font-bold text-white hover:text-[#00ff88] transition-colors truncate block"
                     >
                       sagheerofficial21dnb@gmail.com
                     </a>
@@ -300,64 +300,64 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
               </div>
 
               {/* Interactive Contact Form */}
-              <div className="p-5 rounded-xl border border-white/10 bg-[#0b2721]">
+              <div className="p-5 rounded-xl border border-yellow-500/15 bg-[#201b05]">
                 <h4 className="text-sm font-bold text-white mb-3">Send Editorial Dispatch</h4>
                 {formSubmitted ? (
-                  <div className="p-4 rounded-lg bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 flex items-center gap-2 text-xs font-mono">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <div className="p-4 rounded-lg bg-emerald-950/60 border border-[#00ff88]/40 text-[#00ff88] flex items-center gap-2 text-xs font-mono">
+                    <CheckCircle2 className="w-4 h-4 text-[#00ff88]" />
                     <span>Your dispatch has been transmitted to the editorial newsroom desk.</span>
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit} className="space-y-3">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-[11px] font-mono text-slate-400 mb-1">YOUR NAME</label>
+                        <label className="block text-[11px] font-mono text-yellow-500/80 mb-1">YOUR NAME</label>
                         <input
                           required
                           type="text"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="w-full bg-[#081c18] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ffd700]"
+                          className="w-full bg-[#141204] border border-yellow-500/20 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#00ff88]"
                           placeholder="Dr. Jordan Hayes"
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-mono text-slate-400 mb-1">YOUR EMAIL</label>
+                        <label className="block text-[11px] font-mono text-yellow-500/80 mb-1">YOUR EMAIL</label>
                         <input
                           required
                           type="email"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full bg-[#081c18] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ffd700]"
+                          className="w-full bg-[#141204] border border-yellow-500/20 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#00ff88]"
                           placeholder="jordan@research.edu"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono text-slate-400 mb-1">SUBJECT / TOPIC</label>
+                      <label className="block text-[11px] font-mono text-yellow-500/80 mb-1">SUBJECT / TOPIC</label>
                       <input
                         required
                         type="text"
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full bg-[#081c18] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ffd700]"
+                        className="w-full bg-[#141204] border border-yellow-500/20 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#00ff88]"
                         placeholder="Hardware Benchmark Re-Evaluation Request"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono text-slate-400 mb-1">DISPATCH MESSAGE</label>
+                      <label className="block text-[11px] font-mono text-yellow-500/80 mb-1">DISPATCH MESSAGE</label>
                       <textarea
                         required
                         rows={3}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-[#081c18] border border-white/10 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#ffd700]"
+                        className="w-full bg-[#141204] border border-yellow-500/20 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#00ff88]"
                         placeholder="Enter your technical inquiry or review unit proposal..."
                       />
                     </div>
                     <button
                       type="submit"
-                      className="px-4 py-2 bg-[#ffd700] hover:bg-[#ffcc00] text-[#081c18] text-xs font-mono font-bold uppercase rounded-lg flex items-center gap-1.5 transition-colors"
+                      className="px-4 py-2 bg-[#ffd700] hover:bg-[#00ff88] text-[#141204] text-xs font-mono font-bold uppercase rounded-lg flex items-center gap-1.5 transition-colors"
                     >
                       <Send className="w-3.5 h-3.5" />
                       Transmit Dispatch
@@ -370,14 +370,14 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
 
           {page === 'privacy' && (
             <div className="space-y-5 text-xs sm:text-sm leading-relaxed">
-              <div className="border-b border-white/10 pb-4">
+              <div className="border-b border-yellow-500/15 pb-4">
                 <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                   LEGAL &amp; GDPR COMPLIANCE
                 </span>
                 <h2 className="text-2xl font-extrabold text-white mt-1">
                   Privacy Policy &amp; Cookie Notice
                 </h2>
-                <p className="text-xs font-mono text-slate-400 mt-1">Last Updated: October 2026</p>
+                <p className="text-xs font-mono text-yellow-500/70 mt-1">Last Updated: October 2026</p>
               </div>
 
               <p>
@@ -409,14 +409,14 @@ export const PagesModal: React.FC<PagesModalProps> = ({ page, onClose, onSwitchP
 
           {page === 'terms' && (
             <div className="space-y-5 text-xs sm:text-sm leading-relaxed">
-              <div className="border-b border-white/10 pb-4">
+              <div className="border-b border-yellow-500/15 pb-4">
                 <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-wider">
                   TERMS OF PUBLICATION
                 </span>
                 <h2 className="text-2xl font-extrabold text-white mt-1">
                   Terms &amp; Conditions
                 </h2>
-                <p className="text-xs font-mono text-slate-400 mt-1">Effective: October 2026</p>
+                <p className="text-xs font-mono text-yellow-500/70 mt-1">Effective: October 2026</p>
               </div>
 
               <div>

@@ -28,12 +28,12 @@ export const BookmarksModal: React.FC<BookmarksModalProps> = ({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-xl bg-[#0b2721] border border-[#ffd700]/50 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
+        className="w-full max-w-xl bg-[#201b05] border border-[#ffd700]/50 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between p-4 border-b border-white/10 bg-[#081c18]">
+        <div className="flex items-center justify-between p-4 border-b border-yellow-500/15 bg-[#141204]">
           <div className="flex items-center gap-2">
-            <Bookmark className="w-5 h-5 text-[#ffd700] fill-[#ffd700]" />
+            <Bookmark className="w-5 h-5 text-[#00ff88] fill-[#00ff88]" />
             <h3 className="text-base font-bold text-white font-mono uppercase">
               Reading Vault ({savedArticles.length})
             </h3>
@@ -59,11 +59,11 @@ export const BookmarksModal: React.FC<BookmarksModalProps> = ({
         <div className="flex-1 overflow-y-auto p-3 space-y-2">
           {savedArticles.length === 0 ? (
             <div className="text-center py-16 space-y-3">
-              <Bookmark className="w-8 h-8 text-slate-600 mx-auto" />
+              <Bookmark className="w-8 h-8 text-yellow-600/40 mx-auto" />
               <p className="text-sm font-mono text-slate-400">
                 Your reading vault is empty.
               </p>
-              <p className="text-xs text-slate-500 max-w-xs mx-auto">
+              <p className="text-xs text-yellow-500/60 max-w-xs mx-auto">
                 Bookmark in-depth research papers on any card or reading modal to review offline.
               </p>
             </div>
@@ -71,7 +71,7 @@ export const BookmarksModal: React.FC<BookmarksModalProps> = ({
             savedArticles.map((article) => (
               <div
                 key={article.id}
-                className="p-3 rounded-xl border border-white/10 bg-[#081c18] flex items-center justify-between gap-3 group hover:border-[#ffd700]/50 transition-colors"
+                className="p-3 rounded-xl border border-yellow-500/15 bg-[#141204] flex items-center justify-between gap-3 group hover:border-[#ffd700]/50 transition-colors"
               >
                 <button
                   onClick={() => {
@@ -80,7 +80,7 @@ export const BookmarksModal: React.FC<BookmarksModalProps> = ({
                   }}
                   className="flex-1 text-left"
                 >
-                  <div className="flex items-center gap-2 text-[10px] font-mono text-[#5fdee7] mb-0.5">
+                  <div className="flex items-center gap-2 text-[10px] font-mono text-[#ffd700] mb-0.5">
                     <span>{article.category}</span>
                     <span>·</span>
                     <span className="flex items-center gap-1">
@@ -106,7 +106,7 @@ export const BookmarksModal: React.FC<BookmarksModalProps> = ({
                       onSelectArticle(article);
                       onClose();
                     }}
-                    className="p-2 text-slate-400 hover:text-[#ffd700] rounded-lg hover:bg-white/5 transition-colors"
+                    className="p-2 text-slate-400 hover:text-[#00ff88] rounded-lg hover:bg-white/5 transition-colors"
                   >
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -116,7 +116,7 @@ export const BookmarksModal: React.FC<BookmarksModalProps> = ({
           )}
         </div>
 
-        <div className="p-3 bg-[#051411] border-t border-white/10 text-center text-xs font-mono text-slate-400">
+        <div className="p-3 bg-[#120f03] border-t border-yellow-500/15 text-center text-xs font-mono text-yellow-500/70">
           Saved offline to local cache
         </div>
       </div>
